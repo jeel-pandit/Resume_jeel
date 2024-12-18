@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="intro.css" />
+    <style>
+      /* Global Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Section styles */
+      section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-in-out;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Additional animations for variety */
+      .slide-in-left {
+        transform: translateX(-100px);
+      }
+
+      .slide-in-right {
+        transform: translateX(100px);
+      }
+
+      .zoom-in {
+        transform: scale(0.8);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .visible.slide-in-left,
+      .visible.slide-in-right,
+      .visible.zoom-in,
+      .visible.fade-in {
+        transform: translateX(0);
+        transform: translateY(0);
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#"><u>Portfolio</u></a></li>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home Section -->
+      <section id="intro" class="intro" >
+        <p style="font-size: 40px">Hello It's Me</p>
+        <h1>Pandit Jeel</h1>
+        <p class="description" style="text-align: left">
+          I am dedicated to pursuing opportunities in a company where I can
+          maximize my potential, kickstart my career, and significantly
+          contribute to the organization's growth while developing a valuable
+          skill set.
+        </p>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="education">
+        <h1 style="font-size: 50px"><u>Education</u></h1>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>
+                10th at Shree Swaminarayana Gurukul Vidhyalaya, Gandhinagar
+              </h3>
+              <p>March, 2020</p>
+              <p>71.17%</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>12th at N.K School Of Commerce, Gandhinagar</h3>
+              <p>March, 2022</p>
+              <p>88%</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>B.C.A at Kadi University, Gandhinagar</h3>
+              <p>Persuing last year</p>
+              <p>1st year CPI: 9.33</p>
+              <p>2nd year CPI: 9.29</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects">
+        <h1>Projrct : 1</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>
+              ➔ Designed an E-Commerce Platform that delivers furniture products
+              to customers.
+            </p>
+            <p>➔ Created wire-frames and prototypes in Figma.</p>
+            <p>➔ Focus on clean, user-friendly design.</p>
+          </div>
+        </div>
+        <div class="image1">
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\HomePage_WH.png"
+            alt="website design"
+            class="project-image1"
+          />
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\ctr_acc_WH.png"
+            alt="website design"
+            class="project-image1"
+          />
+        </div>
+        <h1>Project: 2</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>➔ Created and implemented custom animations</p>
+            <p>➔ Designed smooth, engaging animation using Figma.</p>
+            <p>
+              ➔ Ensured animations enhanced UX and aligned with brand identity.
+            </p>
+          </div>
+        </div>
+        <div class="image2">
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\p8.jpg"
+            alt="website design"
+            class="project-image2"
+          />
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\p9.jpg"
+            alt="website design"
+            class="project-image2"
+          />
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\p10.jpg"
+            alt="website design"
+            class="project-image2"
+          />
+        </div>
+        <h1>Projrct : 3</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>
+              ➔ Developed a 3D carousel slider to showcase various fruits with
+              smooth animation and dynamic rotating effects.
+            </p>
+            <p>
+              ➔ Utilized vibrant color palettes and clean typography to enhance
+              the modern, fresh, and lively aesthetic of the landing page.
+            </p>
+            <p>
+              ➔ Applied advanced Figma features like components, smart animate,
+              and interactive prototyping to ensure seamless transaction and
+              user experience.
+            </p>
+          </div>
+        </div>
+        <div class="image1">
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\p11.jpg"
+            alt="website design"
+            class="project-image3"
+            style="align-items: center;"
+          />
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\p12.jpg"
+            alt="website design"
+            class="project-image3"
+            style="align-items: center;"
+          />
+          <img
+            src="C:\Users\Dell\Desktop\J_Res\J_Res\pics\p13.jpg"
+            alt="website design"
+            class="project-image3"
+            style="align-items: center;"
+          />
+        </div>
+      </section>
+
+      <section id="about" class="about"></section>
+      <h1 style="font-size: 50px; text-align: center;"><u>About</u></h1>
+        <div class="about-content">
+          <div class="skill-section">
+            <p>
+              ● <strong>Skills:</strong> HTML, CSS, BOOTSTRAP<br />
+              JavaScript<br />
+              Basic of Figma<br />
+              &nbsp;&nbsp;- Animation<br />
+              &nbsp;&nbsp;- Prototyping<br />
+              &nbsp;&nbsp;- Wireframing
+            </p>
+          </div>
+          <div class="passion-section">
+            <p>
+              ● As a fresher, I am overflowing with passion for design and eager
+              to learn and grow. I am not afraid to bring fresh perspectives and
+              creativity to the table, and I am committed to continuously
+              improving my skills. I will give my best effort to complete any
+              task assigned to me.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <h1 style="font-size: 50px"><u>Contact</u></h1>
+        <div class="contact-item">
+          <span>📧</span>
+          <p>
+            E-mail ID:
+            <a href="mailto:jeel.pandit05@gmail.com">jeel.pandit05@gmail.com</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <p>Phone no: <a href="tel:7041561642">7041561642</a></p>
+        </div>
+        <div class="contact-item">
+          <span>🔗</span>
+          <p>
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/jeel-pandit-737541325"
+              target="_blank"
+              >www.linkedin.com/in/jeel-pandit</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+    
+    <script>
+      // Intersection Observer API to handle animations on repeated scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1, // Trigger when 10% of the section is visible
+      };
+
+      const observerCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            // Remove visible class for repeated animation
+            entry.target.classList.remove("visible");
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      // Select all sections and observe them
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => observer.observe(section));
+    </script>
+  </body>
+</html>
