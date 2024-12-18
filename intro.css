@@ -1,0 +1,225 @@
+/* Apply smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky navbar styling */
+header {
+  padding: 10px;
+  font-size: large;
+  border-bottom: 1px solid #ddd;
+  position: sticky; /* Change from 'fixed' to 'sticky' */
+  top: 0;
+  background-color: white;
+  z-index: 100; /* Ensures navbar stays on top of content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 99%; /* Make sure navbar spans the full width */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar link styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #888;
+}
+
+/* Main content styles */
+main {
+  padding-top: 60px; /* Make sure content doesn't hide behind navbar */
+}
+.intro {
+  margin-top: 20px;
+  margin-left: 60px;
+  /* padding-top: 10px; */
+}
+
+.intro p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.intro h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 1em;
+  color: #666;
+  /* max-width: 1000px; */
+  line-height: 1.6;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.education h1 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item .dot {
+  position: absolute;
+  margin-left: 60px;
+  left: -8px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.timeline-item .content {
+  margin-left: 80px;
+}
+
+.timeline-item h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.projects h1 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.project-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.description {
+  flex: 1;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.description p {
+  margin-bottom: 10px;
+}
+.image1 {
+  gap: 100px;
+  flex: 2;
+  display: inline-flex;
+  margin-left: 180px;
+}
+
+.project-image1 {
+  width: 40%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  align-items: center;
+}
+.image2 {
+  gap: 50px;
+  flex: 2;
+  display: inline-flex;
+}
+
+.project-image2 {
+  width: 50%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-left: 120px;
+}
+
+.about {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-content {
+  font-size: 1em;
+  color: #666;
+  /* max-width: 1000px; */
+  line-height: 1.6;
+  text-align: left;
+  margin-left: 60px;
+  padding-bottom: 20px;
+}
+
+.skill-section p,
+.passion-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.skill-section {
+  margin-bottom: 20px;
+}
+
+.contact {
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.contact-item span {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #0073e6;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
