@@ -4,187 +4,185 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="intro.css" />
     <style>
-  /* Global Smooth Scroll */
-  html {
-    scroll-behavior: smooth;
-  }
+      /* Global Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
 
-  /* Body Styles */
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #f3f4f6, #e0e7ff);
-    color: #333;
-  }
+      /* Body Styles */
+      body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom right, #fef9f9, #e9f5fc);
+        color: #333;
+      }
 
-  /* Header Navigation */
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right, #3b82f6, #6366f1);
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
+      /* Header Navigation */
+      header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, #ffafbd, #ffc3a0);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
 
-  nav ul li {
-    margin: 0 1rem;
-  }
+      nav ul li {
+        margin: 0 1rem;
+      }
 
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-  }
+      nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+      }
 
-  nav ul li a:hover {
-    color: #e0e7ff;
-  }
+      nav ul li a:hover {
+        color: #ffecb3;
+      }
 
-  /* Section Styles */
-  section {
-    padding: 3rem 2rem;
-    margin: 2rem 1rem;
-    border-radius: 15px;
-    background: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-in-out;
-  }
+      /* Section Styles */
+      section {
+        padding: 3rem 2rem;
+        margin: 2rem 1rem;
+        border-radius: 15px;
+        background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-in-out;
+      }
 
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  section h1 {
-    text-align: center;
-    color: #4f46e5;
-    margin-bottom: 1.5rem;
-  }
+      section h1 {
+        text-align: center;
+        color: #fd5e53;
+        margin-bottom: 1.5rem;
+      }
 
-  /* Timeline Styles */
-  .timeline {
-    border-left: 4px solid #3b82f6;
-    padding-left: 2rem;
-  }
+      /* Timeline Styles */
+      .timeline {
+        border-left: 4px solid #fd5e53;
+        padding-left: 2rem;
+      }
 
-  .timeline-item {
-    margin-bottom: 2rem;
-    position: relative;
-  }
+      .timeline-item {
+        margin-bottom: 2rem;
+        position: relative;
+      }
 
-  .timeline-item .dot {
-    width: 12px;
-    height: 12px;
-    background: #6366f1;
-    border-radius: 50%;
-    position: absolute;
-    left: -30px;
-    top: 8px;
-  }
+      .timeline-item .dot {
+        width: 12px;
+        height: 12px;
+        background: #fd5e53;
+        border-radius: 50%;
+        position: absolute;
+        left: -30px;
+        top: 8px;
+      }
 
-  .timeline-item h3 {
-    font-size: 1.5rem;
-    color: #3b82f6;
-    margin-bottom: 0.5rem;
-  }
+      .timeline-item h3 {
+        font-size: 1.5rem;
+        color: #fd5e53;
+        margin-bottom: 0.5rem;
+      }
 
-  .timeline-item p {
-    margin: 0;
-    color: #6b7280;
-  }
+      .timeline-item p {
+        margin: 0;
+        color: #6b7280;
+      }
 
-  /* Button Styling */
-  button {
-    padding: 10px 20px;
-    background: linear-gradient(to right, #6366f1, #3b82f6);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
+      /* Button Styling */
+      button {
+        padding: 10px 20px;
+        background: linear-gradient(to right, #fd5e53, #fcb045);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
 
-  button:hover {
-    background: linear-gradient(to right, #3b82f6, #6366f1);
-  }
+      button:hover {
+        background: linear-gradient(to right, #fcb045, #fd5e53);
+      }
 
-  /* Project Section */
-  .project-details {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.5rem;
-  }
+      /* Project Section */
+      .project-details {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+      }
 
-  .project-details .description {
-    margin-bottom: 1rem;
-  }
+      .project-details .description {
+        margin-bottom: 1rem;
+      }
 
-  .project-details img {
-    width: 100%;
-    max-width: 300px;
-    margin: 0.5rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
+      .project-details img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
 
-  /* About Section */
-  .about-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-  }
+      /* About Section */
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+      }
 
-  .about-content div {
-    flex: 1;
-    min-width: 300px;
-    background: #f9fafb;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
+      .about-content div {
+        flex: 1;
+        min-width: 300px;
+        background: #fdfcfb;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
 
-  /* Contact Section */
-  .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
+      /* Contact Section */
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
 
-  .contact-item span {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    color: #4f46e5;
-  }
+      .contact-item span {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        color: #fd5e53;
+      }
 
-  .contact-item a {
-    text-decoration: none;
-    color: #3b82f6;
-    font-weight: bold;
-  }
+      .contact-item a {
+        text-decoration: none;
+        color: #fd5e53;
+        font-weight: bold;
+      }
 
-  .contact-item a:hover {
-    text-decoration: underline;
-  }
-</style>
-
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -201,25 +199,22 @@
     </header>
 
     <main>
-      <!-- Home Section -->
-      <section id="intro" class="intro">
+      <section id="intro">
         <p style="font-size: 40px">Hello It's Me</p>
         <h1>Pandit Jeel</h1>
-        <p class="description">
-          I am dedicated to pursuing opportunities in a company where I can
-          maximize my potential, kickstart my career, and significantly
-          contribute to the organization's growth while developing a valuable
-          skill set.
+        <p>
+          I am dedicated to pursuing opportunities where I can maximize my
+          potential and contribute to an organization's growth while
+          developing my skills.
         </p>
       </section>
 
-      <!-- Education Section -->
-      <section id="education" class="education">
-        <h1 style="font-size: 50px"><u>Education</u></h1>
+      <section id="education">
+        <h1>Education</h1>
         <div class="timeline">
           <div class="timeline-item">
             <span class="dot"></span>
-            <div class="content">
+            <div>
               <h3>10th at Shree Swaminarayana Gurukul Vidhyalaya</h3>
               <p>March, 2020</p>
               <p>71.17%</p>
@@ -227,7 +222,7 @@
           </div>
           <div class="timeline-item">
             <span class="dot"></span>
-            <div class="content">
+            <div>
               <h3>12th at N.K School Of Commerce</h3>
               <p>March, 2022</p>
               <p>88%</p>
@@ -235,9 +230,9 @@
           </div>
           <div class="timeline-item">
             <span class="dot"></span>
-            <div class="content">
+            <div>
               <h3>B.C.A at Kadi University</h3>
-              <p>Persuing last year</p>
+              <p>Pursuing last year</p>
               <p>1st year CPI: 9.33</p>
               <p>2nd year CPI: 9.29</p>
             </div>
@@ -245,81 +240,42 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="projects">
-        <h1>Project: 1</h1>
+      <section id="projects">
+        <h1>Projects</h1>
         <div class="project-details">
           <div class="description">
-            <p>➔ Designed intuitive user interfaces and created prototypes in Figma.</p>
-            <p>➔ Developed the website’s frontend using React.js.</p>
-            <p>➔ Focus on clean, user-friendly design.</p>
+            <p>➔ Designed intuitive user interfaces and prototypes in Figma.</p>
+            <p>➔ Developed frontend using React.js.</p>
           </div>
         </div>
-        <div class="image1">
-          <img src="pics/HomePage_WH.png" alt="website design" />
-          <img src="pics/ctr_acc_WH.png" alt="website design" />
+        <div>
+          <img src="pics/HomePage_WH.png" alt="Website Design" />
+          <img src="pics/ctr_acc_WH.png" alt="Website Design" />
         </div>
-        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
-          <button>View Figma Prototype</button>
-        </a>
       </section>
 
-      <section id="about" class="about"></section>
-      <h1 style="font-size: 50px; text-align: center;"><u>About</u></h1>
+      <section id="about">
+        <h1>About</h1>
         <div class="about-content">
-          <div class="skill-section">
-            <p>● <strong>Skills:</strong> HTML, CSS, BOOTSTRAP, React JS, Figma (Animation, Prototyping, Wireframing)</p>
+          <div>
+            <p><strong>Skills:</strong> HTML, CSS, React JS, Figma</p>
           </div>
-          <div class="passion-section">
-            <p>● As a fresher, I am passionate about design, eager to learn and grow. I bring fresh perspectives and creativity, with a commitment to improving my skills.</p>
+          <div>
+            <p>I bring fresh perspectives and creativity as a fresher.</p>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact">
-        <h1 style="font-size: 50px"><u>Contact</u></h1>
+      <section id="contact">
+        <h1>Contact</h1>
         <div class="contact-item">
           <span>📧</span>
           <p>
-            E-mail ID:
+            E-mail:
             <a href="mailto:jeel.pandit05@gmail.com">jeel.pandit05@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-item">
-          <span>📞</span>
-          <p>Phone no: <a href="tel:7041561642">7041561642</a></p>
-        </div>
-        <div class="contact-item">
-          <span>🔗</span>
-          <p>
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/jeel-pandit-737541325" target="_blank">www.linkedin.com/in/jeel-pandit</a>
           </p>
         </div>
       </section>
     </main>
-
-    <script>
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const observerCallback = (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
-      const sections = document.querySelectorAll("section");
-      sections.forEach((section) => observer.observe(section));
-    </script>
   </body>
 </html>
