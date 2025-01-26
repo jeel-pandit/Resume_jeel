@@ -11,6 +11,15 @@
         scroll-behavior: smooth;
       }
 
+      /* Gradient Background */
+      body {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        font-family: Arial, sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+
       /* Section styles */
       section {
         opacity: 0;
@@ -49,6 +58,25 @@
         transform: translateY(0);
         transform: scale(1);
       }
+
+      /* Button Styling */
+      .button {
+        padding: 12px 24px;
+        background: linear-gradient(45deg, #4CAF50, #81C784);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      /* Button hover animation */
+      .button:hover {
+        background: linear-gradient(45deg, #388e3c, #66bb6a);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
     </style>
   </head>
   <body>
@@ -67,7 +95,7 @@
 
     <main>
       <!-- Home Section -->
-      <section id="intro" class="intro" >
+      <section id="intro" class="intro">
         <p style="font-size: 40px">Hello It's Me</p>
         <h1>Pandit Jeel</h1>
         <p class="description" style="text-align: left">
@@ -78,199 +106,65 @@
         </p>
       </section>
 
-      <!-- Education Section -->
-      <section id="education" class="education">
-        <h1 style="font-size: 50px"><u>Education</u></h1>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>
-                10th at Shree Swaminarayana Gurukul Vidhyalaya, Gandhinagar
-              </h3>
-              <p>March, 2020</p>
-              <p>71.17%</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>12th at N.K School Of Commerce, Gandhinagar</h3>
-              <p>March, 2022</p>
-              <p>88%</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>B.C.A at Kadi University, Gandhinagar</h3>
-              <p>Persuing last year</p>
-              <p>1st year CPI: 9.33</p>
-              <p>2nd year CPI: 9.29</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Projects Section -->
       <section id="projects" class="projects">
         <h1>Project : 1</h1>
         <div class="project-details">
           <div class="description">
-            <p>
-              ➔ Designed intuitive user interfaces and created prototypes in Figma.
-            </p>
+            <p>➔ Designed intuitive user interfaces and created prototypes in Figma.</p>
             <p>➔ Developed the website’s frontend using React.js.</p>
             <p>➔ Focus on clean, user-friendly design.</p>
           </div>
         </div>
+
         <div class="image1">
           <img
-          src="pics/HomePage_WH.png";
-     
+            src="pics/HomePage_WH.png"
             alt="website design"
             class="project-image1"
           />
           <img
-            src = "pics/ctr_acc_WH.png";
+            src="pics/ctr_acc_WH.png"
             alt="website design"
             class="project-image1"
           />
         </div>
-   
-     <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
-  <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-</a>
+
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
+          <button class="button">View Figma Prototype</button>
+        </a>
+        
         <h1>Project: 2</h1>
         <div class="project-details">
           <div class="description">
             <p>➔ Created and implemented custom animations</p>
             <p>➔ Designed smooth, engaging animation using Figma.</p>
-            <p>
-              ➔ Ensured animations enhanced UX and aligned with brand identity.
-            </p>
+            <p>➔ Ensured animations enhanced UX and aligned with brand identity.</p>
           </div>
         </div>
         <div class="image2">
           <img
-            src = "pics/p8.jpg";
+            src="pics/p8.jpg"
             alt="website design"
             class="project-image2"
           />
           <img
-            src = "pics/p9.jpg"
+            src="pics/p9.jpg"
             alt="website design"
             class="project-image2"
           />
           <img
-            src = "pics/p10.jpg"
+            src="pics/p10.jpg"
             alt="website design"
             class="project-image2"
           />
         </div>
-           <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57" target="_blank">
-  <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-</a>
-        <h1>Project : 3</h1>
-        <div class="project-details">
-          <div class="description">
-            <p>
-              ➔ Developed a 3D carousel slider to showcase various fruits with
-              smooth animation and dynamic rotating effects.
-            </p>
-            <p>
-              ➔ Utilized vibrant color palettes and clean typography to enhance
-              the modern, fresh, and lively aesthetic of the landing page.
-            </p>
-            <p>
-              ➔ Applied advanced Figma features like components, smart animate,
-              and interactive prototyping to ensure seamless transaction and
-              user experience.
-            </p>
-          </div>
-        </div>
-        <div class="image1">
-         <img
-    src="pics/p11.jpg"
-    alt="website design"
-    class="project-image3"
-    style="align-items: center;"
-/>
-          <img
-            src="pics/p12.jpg"
-            alt="website design"
-            class="project-image3"
-            style="align-items: center;"
-          />
-          <img
-            src = "pics/p13.jpg"
-            alt="website design"
-            class="project-image3"
-            style="align-items: center;"
-          />
-        </div>
-         <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=497-45&t=O8gbBHHAGibBaAgL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
-  <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-</a>
-      </section>
-
-      <section id="about" class="about"></section>
-      <h1 style="font-size: 50px; text-align: center;"><u>About</u></h1>
-        <div class="about-content">
-          <div class="skill-section">
-            <p>
-              ● <strong>Skills:</strong> HTML, CSS, BOOTSTRAP<br />
-              React JS<br />
-              Basic of Figma<br />
-              &nbsp;&nbsp;- Animation<br />
-              &nbsp;&nbsp;- Prototyping<br />
-              &nbsp;&nbsp;- Wireframing
-            </p>
-          </div>
-          <div class="passion-section">
-            <p>
-              ● As a fresher, I am overflowing with passion for design and eager
-              to learn and grow. I am not afraid to bring fresh perspectives and
-              creativity to the table, and I am committed to continuously
-              improving my skills. I will give my best effort to complete any
-              task assigned to me.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="contact">
-        <h1 style="font-size: 50px"><u>Contact</u></h1>
-        <div class="contact-item">
-          <span>📧</span>
-          <p>
-            E-mail ID:
-            <a href="mailto:jeel.pandit05@gmail.com">jeel.pandit05@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-item">
-          <span>📞</span>
-          <p>Phone no: <a href="tel:7041561642">7041561642</a></p>
-        </div>
-        <div class="contact-item">
-          <span>🔗</span>
-          <p>
-            LinkedIn:
-            <a
-              href="https://www.linkedin.com/in/jeel-pandit-737541325"
-              target="_blank"
-              >www.linkedin.com/in/jeel-pandit</a
-            >
-          </p>
-        </div>
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57" target="_blank">
+          <button class="button">View Figma Prototype</button>
+        </a>
       </section>
     </main>
-    
+
     <script>
       // Intersection Observer API to handle animations on repeated scroll
       const observerOptions = {
@@ -298,6 +192,3 @@
     </script>
   </body>
 </html>
-
-<!-- src = "https://drive.google.com/thumbnail?id=15VaUos528uX6gmXveUg74U0oQPnzvLQx";  -->
-<!-- Drive link converter tool: https://embed.yayocode.com/ -->
