@@ -1,363 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="intro.css" />
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <style>
-      /* Add Google Fonts for a modern look */
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f8;
+            color: #333;
+            scroll-behavior: smooth;
+        }
 
-      /* Global Smooth Scroll */
-      html {
-        scroll-behavior: smooth;
-      }
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-      /* Body styling */
-      body {
-        font-family: 'Roboto', sans-serif;
-        color: #333;
-        line-height: 1.6;
-        margin: 0;
-        background: linear-gradient(45deg, #6a11cb, #2575fc);
-      }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
 
-      /* Navigation Bar */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 1000;
-      }
+        ::-webkit-scrollbar-track {
+            background-color: #f4f6f8;
+        }
 
-      nav ul {
-        display: flex;
-        justify-content: space-around;
-        list-style: none;
-        padding: 15px;
-        margin: 0;
-      }
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 20px 0;
+        }
 
-      nav a {
-        color: white;
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        padding: 5px 15px;
-        transition: color 0.3s ease;
-      }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-      nav a:hover {
-        color: #4CAF50;
-      }
-
-      /* Section styling */
-      section {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease-in-out;
-        background-color: #fff;
-        margin: 40px 0;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      section.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Hover effect on images */
-      .project-image1,
-      .project-image2,
-      .project-image3 {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .project-image1:hover,
-      .project-image2:hover,
-      .project-image3:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Button styling */
-      button {
-        background-color: #6a11cb;
-        color: #fff;
-        border-radius: 5px;
-        padding: 12px 25px;
-        font-size: 18px;
-        border: none;
-        transition: background-color 0.3s;
-      }
-
-      button:hover {
-        background-color: #2575fc;
-      }
-
-      /* About Section */
-      .about-content {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 30px;
-      }
-
-      .about-content .skill-section,
-      .about-content .passion-section {
-        width: 45%;
-      }
-
-      /* Contact Section */
-      .contact-item {
-        display: flex;
-        align-items: center;
-        margin: 15px 0;
-      }
-
-      .contact-item span {
-        font-size: 30px;
-        margin-right: 15px;
-        color: #2575fc;
-      }
-
-      .contact-item a {
-        color: #333;
-        font-size: 18px;
-        transition: color 0.3s;
-      }
-
-      .contact-item a:hover {
-        color: #6a11cb;
-      }
-
-      /* Mobile responsiveness */
-      @media only screen and (max-width: 768px) {
         nav ul {
-          flex-direction: column;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #333;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(to top left, #ff6f61, #ff7e5f);
+            color: #fff;
+        }
+
+        .intro h1 {
+            font-size: 60px;
+            margin: 0;
+            font-weight: 600;
         }
 
         .intro p {
-          font-size: 25px;
+            font-size: 24px;
+            max-width: 700px;
+            margin: 20px auto;
+            font-weight: 400;
         }
 
-        .project-image1,
-        .project-image2,
-        .project-image3 {
-          width: 100%;
+        /* About Section */
+        #about {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff;
         }
 
-        .about-content {
-          flex-direction: column;
+        #about h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ff6f61;
+            margin-bottom: 30px;
         }
-      }
+
+        #about .content {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .content div {
+            max-width: 400px;
+            text-align: left;
+            margin: 10px;
+        }
+
+        .content div h3 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .content div p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        #projects h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ff6f61;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
+
+    <!-- Header Section -->
     <header>
-      <nav>
-        <ul>
-          <li><a href="#"><u>Portfolio</u></a></li>
-          <li><a href="#intro">Introduction</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-      <!-- Home Section -->
-      <section id="intro" class="intro">
-        <p style="font-size: 40px">Hello It's Me</p>
-        <h1>Pandit Jeel</h1>
-        <p class="description" style="text-align: left">
-          I am dedicated to pursuing opportunities in a company where I can
-          maximize my potential, kickstart my career, and significantly
-          contribute to the organization's growth while developing a valuable
-          skill set.
-        </p>
-      </section>
+    <!-- Intro Section -->
+    <section id="intro" class="intro">
+        <h1>Hello, I'm Jeel Pandit</h1>
+        <p>Passionate about designing beautiful user experiences and creating interactive websites. Welcome to my world!</p>
+    </section>
 
-      <!-- Education Section -->
-      <section id="education" class="education">
-        <h1 style="font-size: 50px"><u>Education</u></h1>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>10th at Shree Swaminarayana Gurukul Vidhyalaya, Gandhinagar</h3>
-              <p>March, 2020</p>
-              <p>71.17%</p>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="content">
+            <div>
+                <h3>Skills</h3>
+                <p>UI/UX Design, Web Development, React.js, Figma, HTML/CSS, JavaScript, Problem-Solving</p>
             </div>
-          </div>
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>12th at N.K School Of Commerce, Gandhinagar</h3>
-              <p>March, 2022</p>
-              <p>88%</p>
+            <div>
+                <h3>Passions</h3>
+                <p>I am passionate about creating seamless user experiences, learning new design techniques, and experimenting with new web technologies.</p>
             </div>
-          </div>
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>B.C.A at Kadi University, Gandhinagar</h3>
-              <p>Persuing last year</p>
-              <p>1st year CPI: 9.33</p>
-              <p>2nd year CPI: 9.29</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-list">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1" />
+                <div class="overlay">
+                    <h3>Project 1</h3>
+                </div>
             </div>
-          </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2" />
+                <div class="overlay">
+                    <h3>Project 2</h3>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="project3.jpg" alt="Project 3" />
+                <div class="overlay">
+                    <h3>Project 3</h3>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="projects">
-        <h1>Project : 1</h1>
-        <div class="project-details">
-          <div class="description">
-            <p>➔ Designed intuitive user interfaces and created prototypes in Figma.</p>
-            <p>➔ Developed the website’s frontend using React.js.</p>
-            <p>➔ Focus on clean, user-friendly design.</p>
-          </div>
-        </div>
-        <div class="image1">
-          <img
-            src="pics/HomePage_WH.png"
-            alt="website design"
-            class="project-image1"
-          />
-          <img
-            src="pics/ctr_acc_WH.png"
-            alt="website design"
-            class="project-image1"
-          />
-        </div>
-        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
-          <button>View Figma Prototype</button>
-        </a>
-        <h1>Project: 2</h1>
-        <div class="project-details">
-          <div class="description">
-            <p>➔ Created and implemented custom animations</p>
-            <p>➔ Designed smooth, engaging animation using Figma.</p>
-            <p>➔ Ensured animations enhanced UX and aligned with brand identity.</p>
-          </div>
-        </div>
-        <div class="image2">
-          <img
-            src="pics/p8.jpg"
-            alt="website design"
-            class="project-image2"
-          />
-          <img
-            src="pics/p9.jpg"
-            alt="website design"
-            class="project-image2"
-          />
-          <img
-            src="pics/p10.jpg"
-            alt="website design"
-            class="project-image2"
-          />
-        </div>
-        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57" target="_blank">
-          <button>View Figma Prototype</button>
-        </a>
-        <h1>Project : 3</h1>
-        <div class="project-details">
-          <div class="description">
-            <p>
-              ➔ Developed a 3D carousel slider to showcase various fruits with
-              smooth animation and dynamic rotating effects.
-            </p>
-            <p>
-              ➔ Utilized vibrant color palettes and clean typography to enhance
-              the modern, fresh, and lively aesthetic of the landing page.
-            </p>
-            <p>
-              ➔ Applied advanced Figma features like components, smart animate,
-              and interactive prototyping.
-            </p>
-          </div>
-        </div>
-        <div class="image3">
-          <img
-            src="pics/p12.jpg"
-            alt="website design"
-            class="project-image3"
-          />
-          <img
-            src="pics/p11.jpg"
-            alt="website design"
-            class="project-image3"
-          />
-        </div>
-        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=240-13&t=yw0EDHHX7lHHdzoP-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=209%3A295" target="_blank">
-          <button>View Figma Prototype</button>
-        </a>
-      </section>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Jeel Pandit | All Rights Reserved</p>
+        <p>Feel free to <a href="mailto:jeel.pandit@example.com">Contact Me</a></p>
+    </footer>
 
-      <!-- About Section -->
-      <section id="about" class="about">
-        <h1><u>About Me</u></h1>
-        <div class="about-content">
-          <div class="skill-section">
-            <h2>Skills</h2>
-            <p>➔ UI/UX Design</p>
-            <p>➔ React.js</p>
-            <p>➔ Web Design</p>
-            <p>➔ Figma</p>
-          </div>
-          <div class="passion-section">
-            <h2>Passions</h2>
-            <p>➔ Designing and improving user experiences.</p>
-            <p>➔ Learning new design tools and techniques.</p>
-            <p>➔ Problem-solving through clean and effective design.</p>
-          </div>
-        </div>
-      </section>
+</body>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact">
-        <h1><u>Contact</u></h1>
-        <div class="contact-item">
-          <span class="fa fa-phone"></span>
-          <a href="tel:+91-123-456789">+91-123-456789</a>
-        </div>
-        <div class="contact-item">
-          <span class="fa fa-envelope"></span>
-          <a href="mailto:youremail@example.com">youremail@example.com</a>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      // Intersection Observer and Animation
-      const sections = document.querySelectorAll("section");
-
-      const options = {
-        root: null,
-        threshold: 0.5,
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, options);
-
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
-    </script>
-  </body>
 </html>
