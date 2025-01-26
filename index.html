@@ -1,227 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-  <header>
- <style>
-  /* Global Smooth Scroll */
-  html {
-    scroll-behavior: smooth;
-  }
+  <head>
+    <style>
+      /* Global Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
 
-  body {
-    background: linear-gradient(to right, #e0f7fa, #80deea); /* Light gradient background */
-    font-family: Arial, sans-serif;
-  }
+      body {
+        background: linear-gradient(to right, #e0f7fa, #80deea); /* Light gradient background */
+        font-family: Arial, sans-serif;
+      }
 
-  /* Section styles */
-  section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-in-out;
-  }
+      /* Section styles */
+      section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-in-out;
+      }
 
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  /* Animation classes */
-  .slide-in-left {
-    transform: translateX(-100px);
-  }
+      /* Animation classes */
+      .slide-in-left {
+        transform: translateX(-100px);
+      }
 
-  .slide-in-right {
-    transform: translateX(100px);
-  }
+      .slide-in-right {
+        transform: translateX(100px);
+      }
 
-  .zoom-in {
-    transform: scale(0.8);
-  }
+      .zoom-in {
+        transform: scale(0.8);
+      }
 
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+      }
 
-  .visible.slide-in-left,
-  .visible.slide-in-right,
-  .visible.zoom-in,
-  .visible.fade-in {
-    transform: translateX(0);
-    transform: translateY(0);
-    transform: scale(1);
-  }
+      .visible.slide-in-left,
+      .visible.slide-in-right,
+      .visible.zoom-in,
+      .visible.fade-in {
+        transform: translateX(0);
+        transform: translateY(0);
+        transform: scale(1);
+      }
 
-  /* Navigation bar */
-  header {
-    background: #ffffff;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
+      /* Navigation bar */
+      header {
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
 
-  nav ul li a {
-    text-decoration: none;
-    color: #1e88e5;  /* Updated font color */
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
+      nav ul li a {
+        text-decoration: none;
+        color: #1e88e5;  /* Updated font color */
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
 
-  nav ul li a:hover {
-    color: #4caf50;  /* Color change on hover */
-  }
+      nav ul li a:hover {
+        color: #4caf50;  /* Color change on hover */
+      }
 
-  /* Home Section */
-  #intro {
-    text-align: center;
-    padding: 80px 0;
-  }
+      /* Home Section */
+      #intro {
+        text-align: center;
+        padding: 80px 0;
+      }
 
-  #intro p {
-    font-size: 40px;
-    color: #1e88e5;  /* Updated font color */
-    margin-bottom: 10px;
-  }
+      #intro p {
+        font-size: 40px;
+        color: #1e88e5;  /* Updated font color */
+        margin-bottom: 10px;
+      }
 
-  #intro h1 {
-    font-size: 50px;
-    font-weight: bold;
-    color: #00796b; /* Font color */
-  }
+      #intro h1 {
+        font-size: 50px;
+        font-weight: bold;
+        color: #00796b; /* Font color */
+      }
 
-  #intro .description {
-    font-size: 18px;
-    color: #555;
-    max-width: 600px;
-    margin: 20px auto;
-    line-height: 1.6;
-  }
+      #intro .description {
+        font-size: 18px;
+        color: #555;
+        max-width: 600px;
+        margin: 20px auto;
+        line-height: 1.6;
+      }
 
-  /* Education Section */
-  #education {
-    padding: 50px 0;
-    background: #ffffff;
-  }
+      /* Education Section */
+      #education {
+        padding: 50px 0;
+        background: #ffffff;
+      }
 
-  .timeline {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+      .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-  .timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
 
-  .timeline-item .dot {
-    width: 10px;
-    height: 10px;
-    background: #4caf50;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
+      .timeline-item .dot {
+        width: 10px;
+        height: 10px;
+        background: #4caf50;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
 
-  .timeline-item .content {
-    font-size: 18px;
-    color: #333;
-  }
+      .timeline-item .content {
+        font-size: 18px;
+        color: #333;
+      }
 
-  .timeline-item .content h3 {
-    font-weight: bold;
-    color: #00796b;
-  }
+      .timeline-item .content h3 {
+        font-weight: bold;
+        color: #00796b;
+      }
 
-  /* Projects Section */
-  #projects {
-    padding: 60px 0;
-    background: #f1f1f1;
-  }
+      /* Projects Section */
+      #projects {
+        padding: 60px 0;
+        background: #f1f1f1;
+      }
 
-  .projects h1 {
-    font-size: 40px;
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-  }
+      .projects h1 {
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        margin-bottom: 40px;
+      }
 
-  .project-details {
-    background: white;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-  }
+      .project-details {
+        background: white;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+      }
 
-  .project-details .description p {
-    font-size: 18px;
-    color: #333;
-  }
+      .project-details .description p {
+        font-size: 18px;
+        color: #333;
+      }
 
-  .image1, .image2, .image3 {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
+      .image1, .image2, .image3 {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
 
-  .project-image1, .project-image2, .project-image3 {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    transition: transform 0.5s ease, filter 0.3s ease; /* Updated animation */
-  }
+      .project-image1, .project-image2, .project-image3 {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        transition: transform 0.5s ease, filter 0.3s ease; /* Updated animation */
+      }
 
-  .project-image1:hover, .project-image2:hover, .project-image3:hover {
-    transform: scale(1.1) rotate(5deg); /* Added rotation effect */
-    filter: brightness(1.2);  /* Brighten the image on hover */
-  }
+      .project-image1:hover, .project-image2:hover, .project-image3:hover {
+        transform: scale(1.1) rotate(5deg); /* Added rotation effect */
+        filter: brightness(1.2);  /* Brighten the image on hover */
+      }
 
-  /* About Section */
-  #about {
-    padding: 50px 0;
-    background: #ffffff;
-  }
+      /* About Section */
+      #about {
+        padding: 50px 0;
+        background: #ffffff;
+      }
 
-  .about-content {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+      .about-content {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
 
-  .skill-section, .passion-section {
-    max-width: 400px;
-  }
+      .skill-section, .passion-section {
+        max-width: 400px;
+      }
 
-  /* Contact Section */
-  #contact {
-    padding: 50px 0;
-    background: #f1f1f1;
-    text-align: center;
-  }
+      /* Contact Section */
+      #contact {
+        padding: 50px 0;
+        background: #f1f1f1;
+        text-align: center;
+      }
 
-  .contact-item {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-  }
+      .contact-item {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+      }
 
-  .contact-item a {
-    color: #00796b;
-    text-decoration: none;
-  }
+      .contact-item a {
+        color: #00796b;
+        text-decoration: none;
+      }
 
-  .contact-item a:hover {
-    text-decoration: underline;
-  }
-</style>
-
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -300,7 +299,7 @@
         <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
           <button>View Figma Prototype</button>
         </a>
-<br/>
+        <br/>
         <h1>Project: 2</h1>
         <div class="project-details">
           <div class="description">
@@ -319,7 +318,7 @@
           <button>View Figma Prototype</button>
         </a>
       </section>
-<br/>
+      <br/>
       <section id="about" class="about"></section>
       <h1><u>About</u></h1>
       <div class="about-content">
