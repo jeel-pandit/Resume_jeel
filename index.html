@@ -11,13 +11,9 @@
         scroll-behavior: smooth;
       }
 
-      /* Gradient Background */
       body {
-        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        background: linear-gradient(to right, #e0f7fa, #80deea); /* Light gradient background */
         font-family: Arial, sans-serif;
-        color: white;
-        margin: 0;
-        padding: 0;
       }
 
       /* Section styles */
@@ -32,7 +28,7 @@
         transform: translateY(0);
       }
 
-      /* Additional animations for variety */
+      /* Animation classes */
       .slide-in-left {
         transform: translateX(-100px);
       }
@@ -59,24 +55,175 @@
         transform: scale(1);
       }
 
-      /* Button Styling */
-      .button {
-        padding: 12px 24px;
-        background: linear-gradient(45deg, #4CAF50, #81C784);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: all 0.3s ease;
+      /* Navigation bar */
+      header {
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
-      /* Button hover animation */
-      .button:hover {
-        background: linear-gradient(45deg, #388e3c, #66bb6a);
-        transform: translateY(-5px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
       }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #4caf50;
+      }
+
+      /* Home Section */
+      #intro {
+        text-align: center;
+        padding: 80px 0;
+      }
+
+      #intro p {
+        font-size: 40px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #intro h1 {
+        font-size: 50px;
+        font-weight: bold;
+        color: #00796b;
+      }
+
+      #intro .description {
+        font-size: 18px;
+        color: #555;
+        max-width: 600px;
+        margin: 20px auto;
+        line-height: 1.6;
+      }
+
+      /* Education Section */
+      #education {
+        padding: 50px 0;
+        background: #ffffff;
+      }
+
+      .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .timeline-item .dot {
+        width: 10px;
+        height: 10px;
+        background: #4caf50;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .timeline-item .content {
+        font-size: 18px;
+        color: #333;
+      }
+
+      .timeline-item .content h3 {
+        font-weight: bold;
+        color: #00796b;
+      }
+
+      /* Projects Section */
+      #projects {
+        padding: 60px 0;
+        background: #f1f1f1;
+      }
+
+      .projects h1 {
+        font-size: 40px;
+        text-align: center;
+        color: #00796b;
+        margin-bottom: 40px;
+      }
+
+      .project-details {
+        background: white;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+      }
+
+      .project-details .description p {
+        font-size: 18px;
+        color: #333;
+      }
+
+      .image1, .image2, .image3 {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .project-image1, .project-image2, .project-image3 {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .project-image1:hover, .project-image2:hover, .project-image3:hover {
+        transform: scale(1.05);
+      }
+
+      /* About Section */
+      #about {
+        padding: 50px 0;
+        background: #ffffff;
+      }
+
+      .about-content {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .skill-section, .passion-section {
+        max-width: 400px;
+      }
+
+      /* Contact Section */
+      #contact {
+        padding: 50px 0;
+        background: #f1f1f1;
+        text-align: center;
+      }
+
+      .contact-item {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .contact-item a {
+        color: #00796b;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
     </style>
   </head>
   <body>
@@ -96,14 +243,48 @@
     <main>
       <!-- Home Section -->
       <section id="intro" class="intro">
-        <p style="font-size: 40px">Hello It's Me</p>
+        <p>Hello, It's Me</p>
         <h1>Pandit Jeel</h1>
-        <p class="description" style="text-align: left">
+        <p class="description">
           I am dedicated to pursuing opportunities in a company where I can
           maximize my potential, kickstart my career, and significantly
           contribute to the organization's growth while developing a valuable
           skill set.
         </p>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="education">
+        <h1><u>Education</u></h1>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>
+                10th at Shree Swaminarayana Gurukul Vidhyalaya, Gandhinagar
+              </h3>
+              <p>March, 2020</p>
+              <p>71.17%</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>12th at N.K School Of Commerce, Gandhinagar</h3>
+              <p>March, 2022</p>
+              <p>88%</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>B.C.A at Kadi University, Gandhinagar</h3>
+              <p>Persuing last year</p>
+              <p>1st year CPI: 9.33</p>
+              <p>2nd year CPI: 9.29</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Projects Section -->
@@ -116,24 +297,15 @@
             <p>➔ Focus on clean, user-friendly design.</p>
           </div>
         </div>
-
         <div class="image1">
-          <img
-            src="pics/HomePage_WH.png"
-            alt="website design"
-            class="project-image1"
-          />
-          <img
-            src="pics/ctr_acc_WH.png"
-            alt="website design"
-            class="project-image1"
-          />
+          <img src="pics/HomePage_WH.png" alt="website design" class="project-image1" />
+          <img src="pics/ctr_acc_WH.png" alt="website design" class="project-image1" />
         </div>
 
         <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
-          <button class="button">View Figma Prototype</button>
+          <button>View Figma Prototype</button>
         </a>
-        
+
         <h1>Project: 2</h1>
         <div class="project-details">
           <div class="description">
@@ -143,34 +315,72 @@
           </div>
         </div>
         <div class="image2">
-          <img
-            src="pics/p8.jpg"
-            alt="website design"
-            class="project-image2"
-          />
-          <img
-            src="pics/p9.jpg"
-            alt="website design"
-            class="project-image2"
-          />
-          <img
-            src="pics/p10.jpg"
-            alt="website design"
-            class="project-image2"
-          />
+          <img src="pics/p8.jpg" alt="website design" class="project-image2" />
+          <img src="pics/p9.jpg" alt="website design" class="project-image2" />
+          <img src="pics/p10.jpg" alt="website design" class="project-image2" />
         </div>
-        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57" target="_blank">
-          <button class="button">View Figma Prototype</button>
+
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57">
+          <button>View Figma Prototype</button>
         </a>
+        
+        <h1>Project : 3</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>➔ Developed a 3D carousel slider to showcase various fruits with smooth animation and dynamic rotating effects.</p>
+            <p>➔ Utilized vibrant color palettes and clean typography to enhance the modern, fresh, and lively aesthetic of the landing page.</p>
+            <p>➔ Applied advanced Figma features like components, smart animate, and interactive prototyping to ensure seamless transaction and user experience.</p>
+          </div>
+        </div>
+        <div class="image1">
+          <img src="pics/p11.jpg" alt="website design" class="project-image3" />
+          <img src="pics/p12.jpg" alt="website design" class="project-image3" />
+          <img src="pics/p13.jpg" alt="website design" class="project-image3" />
+        </div>
+        
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=497-45&t=O8gbBHHAGibBaAgL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
+          <button>View Figma Prototype</button>
+        </a>
+      </section>
+
+      <section id="about" class="about"></section>
+      <h1><u>About</u></h1>
+      <div class="about-content">
+        <div class="skill-section">
+          <p>● <strong>Skills:</strong> HTML, CSS, BOOTSTRAP, React JS, Figma (Animation, Prototyping, Wireframing)</p>
+        </div>
+        <div class="passion-section">
+          <p>● As a fresher, I am overflowing with passion for design and eager to learn and grow. I am committed to continuously improving my skills.</p>
+        </div>
+      </div>
+      <section id="contact" class="contact">
+        <h1><u>Contact</u></h1>
+        <div class="contact-item">
+          <span>📧</span>
+          <p>
+            E-mail ID:
+            <a href="mailto:jeel.pandit05@gmail.com">jeel.pandit05@gmail.com</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <p>Phone no: <a href="tel:7041561642">7041561642</a></p>
+        </div>
+        <div class="contact-item">
+          <span>🔗</span>
+          <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/jeel-pandit-737541325" target="_blank">www.linkedin.com/in/jeel-pandit</a>
+          </p>
+        </div>
       </section>
     </main>
 
     <script>
-      // Intersection Observer API to handle animations on repeated scroll
       const observerOptions = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.1, // Trigger when 10% of the section is visible
+        threshold: 0.1,
       };
 
       const observerCallback = (entries, observer) => {
@@ -178,7 +388,6 @@
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
           } else {
-            // Remove visible class for repeated animation
             entry.target.classList.remove("visible");
           }
         });
@@ -186,7 +395,6 @@
 
       const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-      // Select all sections and observe them
       const sections = document.querySelectorAll("section");
       sections.forEach((section) => observer.observe(section));
     </script>
