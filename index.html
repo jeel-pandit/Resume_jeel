@@ -1,294 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="intro.css" />
     <style>
-        /* Global Styles */
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f6f8;
-            color: #333;
-            scroll-behavior: smooth;
-        }
+      /* Global Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+        font-family: 'Arial', sans-serif;
+      }
 
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+      /* Body background with gradient */
+      body {
+        background: linear-gradient(45deg, #ff6ec7, #f7a2ff);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-        }
+      /* Header Navigation */
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px 20px;
+        z-index: 100;
+      }
+      
+      header nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
 
-        ::-webkit-scrollbar-track {
-            background-color: #f4f6f8;
-        }
+      header nav ul li a:hover {
+        color: #f7a2ff;
+      }
 
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 20px 0;
-        }
+      /* Section Styles */
+      section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-in-out;
+      }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 30px;
-        }
+      /* Section Animation */
+      .slide-in-left {
+        transform: translateX(-100px);
+      }
+      .slide-in-right {
+        transform: translateX(100px);
+      }
+      .zoom-in {
+        transform: scale(0.8);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+      }
 
-        nav a {
-            color: #333;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 16px;
-            letter-spacing: 1.5px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+      .visible.slide-in-left,
+      .visible.slide-in-right,
+      .visible.zoom-in,
+      .visible.fade-in {
+        transform: translateX(0);
+        transform: translateY(0);
+        transform: scale(1);
+      }
 
-        nav a:hover {
-            color: #ff6f61;
-        }
+      /* Introduction Section */
+      #intro {
+        text-align: center;
+        padding: 100px 20px;
+        background: rgba(0, 0, 0, 0.4);
+        margin-top: 60px;
+      }
 
-        /* Intro Section */
-        .intro {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(to top left, #ff6f61, #ff7e5f);
-            color: #fff;
-        }
+      #intro h1 {
+        font-size: 3em;
+        margin: 10px 0;
+        color: #fff;
+      }
 
-        .intro h1 {
-            font-size: 60px;
-            margin: 0;
-            font-weight: 600;
-        }
+      .description {
+        font-size: 1.2em;
+        color: #ccc;
+        max-width: 600px;
+        margin: 20px auto;
+      }
 
-        .intro p {
-            font-size: 24px;
-            max-width: 700px;
-            margin: 20px auto;
-            font-weight: 400;
-        }
+      /* Education Section */
+      #education {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
 
-        /* About Section */
-        #about {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
+      .timeline {
+        margin: 20px 0;
+        list-style-type: none;
+        padding: 0;
+      }
 
-        #about h2 {
-            font-size: 36px;
-            font-weight: 600;
-            color: #ff6f61;
-            margin-bottom: 30px;
-        }
+      .timeline-item {
+        display: flex;
+        margin: 20px 0;
+        align-items: center;
+      }
 
-        #about .content {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
+      .timeline-item .dot {
+        width: 20px;
+        height: 20px;
+        background-color: #4CAF50;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
 
-        .content div {
-            max-width: 400px;
-            text-align: left;
-            margin: 10px;
-        }
+      .timeline-item .content h3 {
+        font-size: 1.4em;
+        margin: 0;
+      }
 
-        .content div h3 {
-            font-size: 24px;
-            font-weight: 500;
-            color: #333;
-        }
+      .timeline-item .content p {
+        font-size: 1.1em;
+        color: #bbb;
+      }
 
-        .content div p {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #666;
-        }
+      /* Projects Section */
+      #projects {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
 
-        /* Projects Section */
-        #projects {
-            background: #f9f9f9;
-            padding: 80px 20px;
-        }
+      .project-details {
+        margin-bottom: 30px;
+      }
 
-        #projects h2 {
-            font-size: 36px;
-            font-weight: 600;
-            color: #ff6f61;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+      .description p {
+        font-size: 1.1em;
+        color: #ccc;
+      }
 
-        .projects-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 0 20px;
-        }
+      .image1 img {
+        width: 100%;
+        max-width: 500px;
+        margin: 10px 0;
+        border-radius: 10px;
+      }
 
-        .project-card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+      .project-image1,
+      .project-image2,
+      .project-image3 {
+        width: 100%;
+        border-radius: 10px;
+        margin: 10px;
+      }
 
-        .project-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
+      /* Buttons */
+      button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-        .project-card .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+      button:hover {
+        background-color: #45a049;
+      }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
+      /* About Section */
+      #about {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
 
-        .project-card:hover .overlay {
-            opacity: 1;
-        }
+      /* Contact Section */
+      #contact {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
 
-        .overlay h3 {
-            color: #fff;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        /* Footer Section */
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        footer a {
-            color: #ff6f61;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
+      /* Footer */
+      footer {
+        background: #000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+      }
     </style>
-</head>
-
-<body>
-
-    <!-- Header Section -->
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#intro">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro">
-        <h1>Hello, I'm Jeel Pandit</h1>
-        <p>Passionate about designing beautiful user experiences and creating interactive websites. Welcome to my world!</p>
-    </section>
+    <main>
+      <!-- Home Section -->
+      <section id="intro" class="intro">
+        <p style="font-size: 40px">Hello It's Me</p>
+        <h1>Pandit Jeel</h1>
+        <p class="description">
+          I am dedicated to pursuing opportunities in a company where I can
+          maximize my potential, kickstart my career, and significantly
+          contribute to the organization's growth while developing a valuable
+          skill set.
+        </p>
+      </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="content">
-            <div>
-                <h3>Skills</h3>
-                <p>UI/UX Design, Web Development, React.js, Figma, HTML/CSS, JavaScript, Problem-Solving</p>
+      <!-- Education Section -->
+      <section id="education" class="education">
+        <h1 style="font-size: 50px"><u>Education</u></h1>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>10th at Shree Swaminarayana Gurukul Vidhyalaya</h3>
+              <p>March, 2020</p>
+              <p>71.17%</p>
             </div>
-            <div>
-                <h3>Passions</h3>
-                <p>I am passionate about creating seamless user experiences, learning new design techniques, and experimenting with new web technologies.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>12th at N.K School Of Commerce</h3>
+              <p>March, 2022</p>
+              <p>88%</p>
             </div>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div class="content">
+              <h3>B.C.A at Kadi University</h3>
+              <p>Persuing last year</p>
+              <p>1st year CPI: 9.33</p>
+              <p>2nd year CPI: 9.29</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-list">
-            <div class="project-card">
-                <img src="project1.jpg" alt="Project 1" />
-                <div class="overlay">
-                    <h3>Project 1</h3>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="project2.jpg" alt="Project 2" />
-                <div class="overlay">
-                    <h3>Project 2</h3>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="project3.jpg" alt="Project 3" />
-                <div class="overlay">
-                    <h3>Project 3</h3>
-                </div>
-            </div>
+      <!-- Projects Section -->
+      <section id="projects" class="projects">
+        <h1>Project: 1</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>➔ Designed intuitive user interfaces and created prototypes in Figma.</p>
+            <p>➔ Developed the website’s frontend using React.js.</p>
+            <p>➔ Focus on clean, user-friendly design.</p>
+          </div>
         </div>
-    </section>
+        <div class="image1">
+          <img src="pics/HomePage_WH.png" alt="website design" />
+          <img src="pics/ctr_acc_WH.png" alt="website design" />
+        </div>
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
+          <button>View Figma Prototype</button>
+        </a>
+      </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Jeel Pandit | All Rights Reserved</p>
-        <p>Feel free to <a href="mailto:jeel.pandit@example.com">Contact Me</a></p>
-    </footer>
+      <section id="about" class="about"></section>
+      <h1 style="font-size: 50px; text-align: center;"><u>About</u></h1>
+        <div class="about-content">
+          <div class="skill-section">
+            <p>● <strong>Skills:</strong> HTML, CSS, BOOTSTRAP, React JS, Figma (Animation, Prototyping, Wireframing)</p>
+          </div>
+          <div class="passion-section">
+            <p>● As a fresher, I am passionate about design, eager to learn and grow. I bring fresh perspectives and creativity, with a commitment to improving my skills.</p>
+          </div>
+        </div>
+      </section>
 
-</body>
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <h1 style="font-size: 50px"><u>Contact</u></h1>
+        <div class="contact-item">
+          <span>📧</span>
+          <p>
+            E-mail ID:
+            <a href="mailto:jeel.pandit05@gmail.com">jeel.pandit05@gmail.com</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <p>Phone no: <a href="tel:7041561642">7041561642</a></p>
+        </div>
+        <div class="contact-item">
+          <span>🔗</span>
+          <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/jeel-pandit-737541325" target="_blank">www.linkedin.com/in/jeel-pandit</a>
+          </p>
+        </div>
+      </section>
+    </main>
 
+    <script>
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observerCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => observer.observe(section));
+    </script>
+  </body>
 </html>
