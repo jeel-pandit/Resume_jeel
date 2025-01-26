@@ -4,18 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="intro.css" />
+    <link rel="stylesheet" href="style.css" />
     <style>
-      /* Global Smooth Scroll */
-      html {
-        scroll-behavior: smooth;
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      /* Section styles */
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f1f1f1;
+        color: #333;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, #a8dadc, #f1faee); /* Light gradient */
+        padding: 40px 20px; /* Reduced padding */
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+
+      header h1 {
+        font-size: 45px; /* Reduced size */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+
+      header p {
+        font-size: 18px; /* Slightly smaller font */
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #ff5722;
+      }
+
+      /* Section Styles */
       section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
         opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease-in-out;
+        transform: translateY(40px);
+        transition: all 0.7s ease-out;
       }
 
       section.visible {
@@ -23,281 +89,171 @@
         transform: translateY(0);
       }
 
-      /* Additional animations for variety */
-      .slide-in-left {
-        transform: translateX(-100px);
+      /* Projects Section */
+      #projects {
+        background: #f9f9f9;
+        padding: 80px 20px;
       }
 
-      .slide-in-right {
-        transform: translateX(100px);
+      #projects h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 30px;
       }
 
-      .zoom-in {
-        transform: scale(0.8);
+      .project-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
       }
 
-      .fade-in {
+      .description p {
+        font-size: 18px;
+        color: #555;
+      }
+
+      .image1, .image2 {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .project-image1, .project-image2, .project-image3 {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      /* Animation on Scroll */
+      .animate-section {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
       }
 
-      .visible.slide-in-left,
-      .visible.slide-in-right,
-      .visible.zoom-in,
-      .visible.fade-in {
-        transform: translateX(0);
+      .animate-section.visible {
+        opacity: 1;
         transform: translateY(0);
-        transform: scale(1);
+        transition: all 0.7s ease-out;
       }
     </style>
   </head>
+
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="#"><u>Portfolio</u></a></li>
-          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#hero">Home</a></li>
           <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <h1>Jeel Pandit</h1>
+      <p>I'm a UI/UX Designer and Frontend Developer, passionate about creating amazing user experiences.</p>
+      <button>Contact Me</button>
     </header>
 
     <main>
-      <!-- Home Section -->
-      <section id="intro" class="intro" >
-        <p style="font-size: 40px">Hello It's Me</p>
-        <h1>Pandit Jeel</h1>
-        <p class="description" style="text-align: left">
-          I am dedicated to pursuing opportunities in a company where I can
-          maximize my potential, kickstart my career, and significantly
-          contribute to the organization's growth while developing a valuable
-          skill set.
-        </p>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education" class="education">
-        <h1 style="font-size: 50px"><u>Education</u></h1>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>
-                10th at Shree Swaminarayana Gurukul Vidhyalaya, Gandhinagar
-              </h3>
-              <p>March, 2020</p>
-              <p>71.17%</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>12th at N.K School Of Commerce, Gandhinagar</h3>
-              <p>March, 2022</p>
-              <p>88%</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="dot"></span>
-            <div class="content">
-              <h3>B.C.A at Kadi University, Gandhinagar</h3>
-              <p>Persuing last year</p>
-              <p>1st year CPI: 9.33</p>
-              <p>2nd year CPI: 9.29</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Projects Section -->
-      <section id="projects" class="projects">
-        <h1>Project : 1</h1>
+      <section id="projects" class="projects animate-section">
+        <h1>Projects</h1>
+
+        <!-- Project 1 -->
         <div class="project-details">
+          <h2>Project : 1</h2>
           <div class="description">
-            <p>
-              ➔ Designed intuitive user interfaces and created prototypes in Figma.
-            </p>
+            <p>➔ Designed intuitive user interfaces and created prototypes in Figma.</p>
             <p>➔ Developed the website’s frontend using React.js.</p>
             <p>➔ Focus on clean, user-friendly design.</p>
           </div>
+          <div class="image1">
+            <img src="pics/HomePage_WH.png" alt="Project 1" class="project-image1" />
+            <img src="pics/ctr_acc_WH.png" alt="Project 1" class="project-image1" />
+          </div>
+          <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
+            <button>View Figma Prototype</button>
+          </a>
         </div>
-        <div class="image1">
-          <img
-          src="pics/HomePage_WH.png";
-     
-            alt="website design"
-            class="project-image1"
-          />
-          <img
-            src = "pics/ctr_acc_WH.png";
-            alt="website design"
-            class="project-image1"
-          />
-        </div>
-   
-     <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
-  <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-</a>
-        <h1>Project: 2</h1>
+
+        <!-- Project 2 -->
         <div class="project-details">
+          <h2>Project : 2</h2>
           <div class="description">
             <p>➔ Created and implemented custom animations</p>
             <p>➔ Designed smooth, engaging animation using Figma.</p>
-            <p>
-              ➔ Ensured animations enhanced UX and aligned with brand identity.
-            </p>
+            <p>➔ Ensured animations enhanced UX and aligned with brand identity.</p>
           </div>
-        </div>
-        <div class="image2">
-          <img
-            src = "pics/p8.jpg";
-            alt="website design"
-            class="project-image2"
-          />
-          <img
-            src = "pics/p9.jpg"
-            alt="website design"
-            class="project-image2"
-          />
-          <img
-            src = "pics/p10.jpg"
-            alt="website design"
-            class="project-image2"
-          />
-        </div>
-           <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57" target="_blank">
-  <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-</a>
-        <h1>Project : 3</h1>
-        <div class="project-details">
-          <div class="description">
-            <p>
-              ➔ Developed a 3D carousel slider to showcase various fruits with
-              smooth animation and dynamic rotating effects.
-            </p>
-            <p>
-              ➔ Utilized vibrant color palettes and clean typography to enhance
-              the modern, fresh, and lively aesthetic of the landing page.
-            </p>
-            <p>
-              ➔ Applied advanced Figma features like components, smart animate,
-              and interactive prototyping to ensure seamless transaction and
-              user experience.
-            </p>
+          <div class="image2">
+            <img src="pics/p8.jpg" alt="Project 2" class="project-image2" />
+            <img src="pics/p9.jpg" alt="Project 2" class="project-image2" />
+            <img src="pics/p10.jpg" alt="Project 2" class="project-image2" />
           </div>
+          <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57" target="_blank">
+            <button>View Figma Prototype</button>
+          </a>
         </div>
-        <div class="image1">
-         <img
-    src="pics/p11.jpg"
-    alt="website design"
-    class="project-image3"
-    style="align-items: center;"
-/>
-          <img
-            src="pics/p12.jpg"
-            alt="website design"
-            class="project-image3"
-            style="align-items: center;"
-          />
-          <img
-            src = "pics/p13.jpg"
-            alt="website design"
-            class="project-image3"
-            style="align-items: center;"
-          />
-        </div>
-         <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=497-45&t=O8gbBHHAGibBaAgL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
-  <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-</a>
-      </section>
 
-      <section id="about" class="about"></section>
-      <h1 style="font-size: 50px; text-align: center;"><u>About</u></h1>
-        <div class="about-content">
-          <div class="skill-section">
-            <p>
-              ● <strong>Skills:</strong> HTML, CSS, BOOTSTRAP<br />
-              React JS<br />
-              Basic of Figma<br />
-              &nbsp;&nbsp;- Animation<br />
-              &nbsp;&nbsp;- Prototyping<br />
-              &nbsp;&nbsp;- Wireframing
-            </p>
+        <!-- Project 3 -->
+        <div class="project-details">
+          <h2>Project : 3</h2>
+          <div class="description">
+            <p>➔ Developed a 3D carousel slider to showcase various fruits with smooth animation and dynamic rotating effects.</p>
+            <p>➔ Utilized vibrant color palettes and clean typography to enhance the modern, fresh, and lively aesthetic of the landing page.</p>
+            <p>➔ Applied advanced Figma features like components, smart animate, and interactive prototyping to ensure seamless transaction and user experience.</p>
           </div>
-          <div class="passion-section">
-            <p>
-              ● As a fresher, I am overflowing with passion for design and eager
-              to learn and grow. I am not afraid to bring fresh perspectives and
-              creativity to the table, and I am committed to continuously
-              improving my skills. I will give my best effort to complete any
-              task assigned to me.
-            </p>
+          <div class="image1">
+            <img src="pics/p11.jpg" alt="Project 3" class="project-image3" />
+            <img src="pics/p12.jpg" alt="Project 3" class="project-image3" />
+            <img src="pics/p13.jpg" alt="Project 3" class="project-image3" />
           </div>
-        </div>
-      </section>
-      <section id="contact" class="contact">
-        <h1 style="font-size: 50px"><u>Contact</u></h1>
-        <div class="contact-item">
-          <span>📧</span>
-          <p>
-            E-mail ID:
-            <a href="mailto:jeel.pandit05@gmail.com">jeel.pandit05@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-item">
-          <span>📞</span>
-          <p>Phone no: <a href="tel:7041561642">7041561642</a></p>
-        </div>
-        <div class="contact-item">
-          <span>🔗</span>
-          <p>
-            LinkedIn:
-            <a
-              href="https://www.linkedin.com/in/jeel-pandit-737541325"
-              target="_blank"
-              >www.linkedin.com/in/jeel-pandit</a
-            >
-          </p>
+          <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=497-45&t=O8gbBHHAGibBaAgL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
+            <button>View Figma Prototype</button>
+          </a>
         </div>
       </section>
     </main>
-    
+
     <script>
-      // Intersection Observer API to handle animations on repeated scroll
+      // Handle Scroll Animation
+      const sections = document.querySelectorAll('section'); // Select all sections
       const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1, // Trigger when 10% of the section is visible
+        threshold: 0.5
       };
 
-      const observerCallback = (entries, observer) => {
-        entries.forEach((entry) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add('visible'); // Add visible class
           } else {
-            // Remove visible class for repeated animation
-            entry.target.classList.remove("visible");
+            entry.target.classList.remove('visible'); // Optional, remove visible class when out of view
           }
         });
-      };
+      }, observerOptions);
 
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-      // Select all sections and observe them
-      const sections = document.querySelectorAll("section");
-      sections.forEach((section) => observer.observe(section));
+      sections.forEach(section => {
+        observer.observe(section);
+      });
     </script>
   </body>
 </html>
-
-<!-- src = "https://drive.google.com/thumbnail?id=15VaUos528uX6gmXveUg74U0oQPnzvLQx";  -->
-<!-- Drive link converter tool: https://embed.yayocode.com/ -->
