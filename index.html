@@ -32,22 +32,22 @@
 
       /* Header */
       header {
-        background: linear-gradient(135deg, #ff99cc, #66ccff);
-        padding: 80px 20px;
+        background: linear-gradient(135deg, #a8dadc, #f1faee); /* Light gradient */
+        padding: 40px 20px; /* Reduced padding */
         text-align: center;
         color: white;
         position: relative;
       }
 
       header h1 {
-        font-size: 60px;
+        font-size: 45px; /* Reduced size */
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 20px;
       }
 
       header p {
-        font-size: 20px;
+        font-size: 18px; /* Slightly smaller font */
         max-width: 600px;
         margin: 0 auto 30px;
       }
@@ -205,6 +205,58 @@
         transform: translateY(-10px);
       }
 
+      /* Projects Section */
+      #projects {
+        background: #f9f9f9;
+        padding: 80px 20px;
+      }
+
+      #projects h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .project-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .description p {
+        font-size: 18px;
+        color: #555;
+      }
+
+      .image1, .image2 {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .project-image1, .project-image2, .project-image3 {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
       /* Contact Section */
       #contact {
         background: #66ccff;
@@ -276,6 +328,7 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -333,45 +386,92 @@
         </div>
       </section>
 
+      <!-- Projects Section -->
+      <section id="projects" class="projects animate-section">
+        <h1>Project : 1</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>➔ Designed intuitive user interfaces and created prototypes in Figma.</p>
+            <p>➔ Developed the website’s frontend using React.js.</p>
+            <p>➔ Focus on clean, user-friendly design.</p>
+          </div>
+        </div>
+        <div class="image1">
+          <img src="pics/HomePage_WH.png" alt="website design" class="project-image1" />
+          <img src="pics/ctr_acc_WH.png" alt="website design" class="project-image1" />
+        </div>
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
+          <button>View Figma Prototype</button>
+        </a>
+
+        <h1>Project: 2</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>➔ Created and implemented custom animations</p>
+            <p>➔ Designed smooth, engaging animation using Figma.</p>
+            <p>➔ Ensured animations enhanced UX and aligned with brand identity.</p>
+          </div>
+        </div>
+        <div class="image2">
+          <img src="pics/p8.jpg" alt="website design" class="project-image2" />
+          <img src="pics/p9.jpg" alt="website design" class="project-image2" />
+          <img src="pics/p10.jpg" alt="website design" class="project-image2" />
+        </div>
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57" target="_blank">
+          <button>View Figma Prototype</button>
+        </a>
+
+        <h1>Project : 3</h1>
+        <div class="project-details">
+          <div class="description">
+            <p>➔ Developed a 3D carousel slider to showcase various fruits with smooth animation and dynamic rotating effects.</p>
+            <p>➔ Utilized vibrant color palettes and clean typography to enhance the modern, fresh, and lively aesthetic of the landing page.</p>
+            <p>➔ Applied advanced Figma features like components, smart animate, and interactive prototyping to ensure seamless transaction and user experience.</p>
+          </div>
+        </div>
+        <div class="image1">
+          <img src="pics/p11.jpg" alt="website design" class="project-image3" />
+          <img src="pics/p12.jpg" alt="website design" class="project-image3" />
+          <img src="pics/p13.jpg" alt="website design" class="project-image3" />
+        </div>
+        <a href="https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=497-45&t=O8gbBHHAGibBaAgL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1">
+          <button>View Figma Prototype</button>
+        </a>
+      </section>
+
       <!-- Contact Section -->
-      <section id="contact">
+      <section id="contact" class="animate-section">
         <h2>Contact</h2>
         <div class="contact-item">
-          <span>📧</span>
-          <p>Email: <a href="mailto:jeel.pandit05@gmail.com">jeel.pandit05@gmail.com</a></p>
+          <a href="mailto:jeelpandit@example.com">Email Me</a>
         </div>
         <div class="contact-item">
-          <span>📞</span>
-          <p>Phone: <a href="tel:7041561642">7041561642</a></p>
-        </div>
-        <div class="contact-item">
-          <span>🔗</span>
-          <p>
-            LinkedIn: <a href="https://www.linkedin.com/in/jeel-pandit-737541325" target="_blank">www.linkedin.com/in/jeel-pandit</a>
-          </p>
+          <a href="tel:+123456789">Call Me</a>
         </div>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Jeel Pandit. All rights reserved.</p>
+      <p>&copy; 2025 Jeel Pandit. All Rights Reserved.</p>
     </footer>
 
     <script>
-      // Intersection Observer to animate sections when they are in view
+      // Handle Scroll Animation
       const sections = document.querySelectorAll('.animate-section');
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
+      const observerOptions = {
+        threshold: 0.5
+      };
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
 
-      sections.forEach((section) => {
+      sections.forEach(section => {
         observer.observe(section);
       });
     </script>
