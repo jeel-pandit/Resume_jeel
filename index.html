@@ -190,20 +190,20 @@ section {
     transform: scale(1.1);
   }
       .hackathon {
-    background: linear-gradient(to right, #2a2a72, #009ffd);
+    background: linear-gradient(to bottom, #1a1a1a, #333333);
     padding: 40px 20px;
     border-radius: 15px;
-    color: #fff;
+    color: #f0f0f0;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1s ease-in-out;
   }
 
   .hackathon h2 {
     font-size: 2.5em;
-    color: #ffdd57;
-    margin-bottom: 10px;
+    color: #d4af37; /* Gold accent */
+    margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -215,12 +215,13 @@ section {
   }
 
   .highlight-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    background: rgba(255, 215, 0, 0.1); /* Subtle gold overlay */
+    padding: 25px;
     border-radius: 10px;
     margin-top: 20px;
     text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-left: 4px solid #d4af37;
   }
 
   .highlight-box p {
@@ -230,7 +231,7 @@ section {
   }
 
   .highlight-box strong {
-    color: #ffdd57;
+    color: #d4af37;
   }
 
   @keyframes fadeInUp {
@@ -242,6 +243,10 @@ section {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  a:hover {
+    color: #d4af37;
   }
   </style>
 </head>
