@@ -89,84 +89,59 @@ section {
       line-height: 1.6;
       margin: 10px 0;
     }
+  .project {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
 
-    .project {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+  .project-card {
+    background: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-    .project-card {
-      background: linear-gradient(to bottom, #2c2c2c, #4d4d4d);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  }
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-    }
+  .project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
 
-    .project-card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
+  .project-card h3 {
+    color: #d4af37;
+    margin-bottom: 10px;
+  }
 
-    .project-card h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      color: #d4af37;
-    }
+  .project-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+  }
 
-    .project-card p {
-      font-size: 0.9em;
-      line-height: 1.4;
-      margin-bottom: 15px;
-    }
+  .figma-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-    .project-card a {
-      text-decoration: none;
-    }
-
-    .project-card button {
-      padding: 10px 20px;
-      background: #333333;
-      color: #d4af37;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .project-card button:hover {
-      background: #444444;
-    }
-
-    /* Animation for cards */
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0) 70%);
-      transform: rotate(45deg);
-      z-index: 0;
-      transition: opacity 0.5s;
-      opacity: 0;
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
+  .figma-btn:hover {
+    background-color: #45a049;
+  }
 
     footer {
       text-align: center;
@@ -273,45 +248,55 @@ section {
   
     <!-- Projects Section -->
     <section id="projects">
-      <h1>Projects</h1>
-      <div class="project">
-        <div class="project-card">
-          <img src="pics/HomePage_WH.png" alt="Project 1" />
-          <h3>Project 1: WoodenHub</h3>
-          <p>➔ Designed intuitive user interfaces and created prototypes in Figma.<br />
-             ➔ Developed the website’s frontend using React.js.<br />
-             ➔ Implemented PayPal payment integration.</p>
-     <button onclick="window.open('https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1', '_blank');" 
-        style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-  View Figma Prototype
-     </button>
-        </div>
-        <div class="project-card">
-          <img src="pics/p8.jpg" alt="Project 2" />
-          <h3>Project 2: Custom Animation Designs for smoothies website </h3>
-          <p>➔ Created and implemented custom animations.<br />
-             ➔ Designed smooth, engaging animations using Figma.<br />
-             ➔ Applied advanced Figma features like components, smart animate,
-              and interactive prototyping to ensure seamless transaction and
-              user experience.</p>
-            <button onclick="window.open('https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57',' _blank');"
-  style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-        </div> 
-        <div class="project-card">
-          <img src="pics/p11.jpg" alt="Project 3" />
-          <h3>Project 3: Fruit Landing Page with 3D Carousel Slider</h3>
-          <p>➔ Developed a 3D carousel slider to showcase various fruits with
-              smooth animation and dynamic rotating effects.<br />
-             ➔ Utilized vibrant color palettes and clean typography to enhance
-              the modern, fresh, and lively aesthetic of the landing page.<br />
-             ➔ Ensured seamless user experience using React.js.</p>
-            <button onclick="window.open('https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=497-45&t=O8gbBHHAGibBaAgL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1',' _blank');"
-  style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">
-    View Figma Prototype
-  </button>
-      </div>
+     <h1>Projects</h1>
+<div class="project">
+
+  <!-- Project 1 -->
+  <div class="project-card">
+    <img src="pics/HomePage_WH.png" alt="Project 1" />
+    <h3>Project 1: WoodenHub</h3>
+    <p>
+      ➔ Designed intuitive user interfaces and created prototypes in Figma.<br />
+      ➔ Developed the website’s frontend using React.js.<br />
+      ➔ Implemented PayPal payment integration.
+    </p>
+    <button class="figma-btn" onclick="openFigma('https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=152-42&t=rs9RyERpzxyKKqLL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1')">
+      View Figma Prototype
+    </button>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project-card">
+    <img src="pics/p8.jpg" alt="Project 2" />
+    <h3>Project 2: Custom Animation Designs for Smoothies Website</h3>
+    <p>
+      ➔ Created and implemented custom animations.<br />
+      ➔ Designed smooth, engaging animations using Figma.<br />
+      ➔ Applied advanced Figma features like components, smart animate,
+      and interactive prototyping to ensure seamless transaction and
+      user experience.
+    </p>
+    <button class="figma-btn" onclick="openFigma('https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=228-70&t=3NZILoKXreZPkKu2-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=208%3A57')">
+      View Figma Prototype
+    </button>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-card">
+    <img src="pics/p11.jpg" alt="Project 3" />
+    <h3>Project 3: Fruit Landing Page with 3D Carousel Slider</h3>
+    <p>
+      ➔ Developed a 3D carousel slider to showcase various fruits with
+      smooth animation and dynamic rotating effects.<br />
+      ➔ Utilized vibrant color palettes and clean typography to enhance
+      the modern, fresh, and lively aesthetic of the landing page.<br />
+      ➔ Ensured seamless user experience using React.js.
+    </p>
+    <button class="figma-btn" onclick="openFigma('https://www.figma.com/proto/UwezNou8pnns5xgL6qr8CT/First?node-id=497-45&t=O8gbBHHAGibBaAgL-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A13&starting-point-node-id=113%3A249&show-proto-sidebar=1')">
+      View Figma Prototype
+    </button>
+  </div>
+</div>
        </div>
        </section>
 
@@ -336,7 +321,11 @@ section {
     </p>
   </div>
 </section>
-      
+      <script>
+  function openFigma(url) {
+    window.open(url, '_blank');
+  }
+</script>
      
   <!-- Education Section -->
     <section id="education">
