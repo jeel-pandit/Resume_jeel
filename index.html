@@ -265,6 +265,28 @@ section {
   .skills-card ul li {
     margin: 8px 0;
   }
+     @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide-up animation for skill cards */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   /* Responsive Design */
   @media (max-width: 768px) {
